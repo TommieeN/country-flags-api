@@ -1,0 +1,8 @@
+@use './styles/partials/variables' as *;
+@use './styles/partials/mixins' as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
