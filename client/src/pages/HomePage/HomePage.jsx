@@ -1,10 +1,13 @@
 import "./HomePage.scss";
+import Filter from "../../components/Filter/Filter";
 
 function HomePage() {
     
 
   return (
-    <div>HomePage</div>
+    <div>
+      <Filter />
+    </div>
   )
 }
 

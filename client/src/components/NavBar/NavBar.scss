@@ -1,0 +1,21 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.nav-bar {
+    display: flex;
+    padding: 2rem 1rem;
+    justify-content: space-between;
+    // box-shadow: 1px 1px 14px 1px $DarkGray;
+    &__heading {
+        font-size: 1rem;
+        font-weight: 800;
+    }
+    &__wrap {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    &__moon {
+        width: 1rem;
+    }
+}

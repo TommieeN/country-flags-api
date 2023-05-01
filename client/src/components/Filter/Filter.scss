@@ -1,0 +1,49 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+* {
+    list-style: none;
+}
+
+.filter {
+    background-color: $LightModeBackground;
+    padding: 1rem;
+    &__dropdown {
+        padding: 1rem 0;
+       &-toggle {
+        background-color: white;
+        border: none;
+        border-radius: 1rem;
+        padding: 1rem 3rem 1rem 0rem;
+        background-image: url(../../assets/icons/arrow-up.svg);
+        background-repeat: no-repeat;
+        background-position: 90%;
+        background-size: 1rem; 
+        width: 10rem;
+        &-down {
+            cursor: pointer;
+            background-image: url(../../assets/icons/arrow-down.svg);
+        }
+       }
+    }
+    &__list {
+        width: 10rem;
+        gap: 1rem;
+        margin-top: 1rem;
+        :first-child {
+            border-radius: 1rem 1rem 0 0;
+        }
+        :last-child {
+            border-radius: 0 0 1rem 1rem;
+        }
+        &-item {
+            background-color: $White;
+            padding: 0.5rem 2rem;
+            cursor: pointer;
+            &--active {
+                background-color: $LightModeBackground;
+                color: $DarkGray;
+            }
+        }
+    }
+}
