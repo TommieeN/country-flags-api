@@ -1,7 +1,8 @@
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import HomePage from "./pages/HomePage/HomePage";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FlagDetails from "./components/FlagDetails/FlagDetails";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/Details" element={<FlagDetails />} />
       </Routes>
     </BrowserRouter>
   )

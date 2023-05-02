@@ -33,6 +33,9 @@
   &__list {
     width: 60%;
     margin-top: 0.3rem;
+    position: absolute;
+    border-radius: 0.4rem;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
     :first-child {
       padding-top: 0.8rem;
       border-radius: 0.4rem 0.4rem 0 0;

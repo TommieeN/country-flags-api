@@ -1,25 +1,29 @@
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .card {
-    background-color: $White;
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 0.4rem;
-    &__img {
-        width: 100%;
-        border-radius: 0.4rem 0.4rem 0 0;
+  background-color: $White;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 0.4rem;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.001), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+  &__img {
+    width: 100%;
+    border-radius: 0.4rem 0.4rem 0 0;
+  }
+  &__text-container {
+    padding: 1rem;
+  }
+  &__header {
+    padding-bottom: 1rem;
+  }
+  &__text {
+    padding-bottom: 0.2rem;
+    &-bold {
+      font-weight: 600;
     }
-    &__text-container {
-        padding: 1rem;
+    :last-child {
+      padding-bottom: 2rem;
     }
-    &__header {
-        padding-bottom: 1rem;
-    }
-    &__text {
-        padding-bottom: 0.5rem;
-        &-bold {
-            font-weight: 600;
-        }
-    }
+  }
 }
