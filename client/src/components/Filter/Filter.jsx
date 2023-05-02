@@ -2,23 +2,22 @@ import "./Filter.scss";
 import { useState } from "react";
 
 function Filter() {
-
-// USESTATE FOR DROPDOWN
+  // USESTATE FOR DROPDOWN
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-// USESTATE FOR SELECTED REGION
+  // USESTATE FOR SELECTED REGION
   const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
 
-// FILTER REGION OPTIONS
+  // FILTER REGION OPTIONS
   const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
 
-// CLICK FUNCTION TO SET SELECTED REGION AND CLOSE DROPDOWN
+  // CLICK FUNCTION TO SET SELECTED REGION AND CLOSE DROPDOWN
   const handleDropdownClick = (region) => {
     setSelectedRegion(region);
     setIsDropdownOpen(false);
   };
 
-// RENDER FILTER COMPONENT
+  // RENDER FILTER COMPONENT
   return (
     <div className="filter">
       <input className="filter__search" placeholder="Search for a country..." />

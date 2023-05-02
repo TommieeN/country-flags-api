@@ -1,0 +1,25 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.card {
+    background-color: $White;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 0.4rem;
+    &__img {
+        width: 100%;
+        border-radius: 0.4rem 0.4rem 0 0;
+    }
+    &__text-container {
+        padding: 1rem;
+    }
+    &__header {
+        padding-bottom: 1rem;
+    }
+    &__text {
+        padding-bottom: 0.5rem;
+        &-bold {
+            font-weight: 600;
+        }
+    }
+}

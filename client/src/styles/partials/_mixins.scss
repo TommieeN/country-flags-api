@@ -1,1 +1,20 @@
+@use "./variables";
 
+@mixin tablet {
+    @media (min-width: variables.$tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: variables.$desktop-breakpoint) {
+      @content;
+    }
+  }
+
+  @mixin background {
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    border: none;
+    border-radius: 0.4rem;
+  }
