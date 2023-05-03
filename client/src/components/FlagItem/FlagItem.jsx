@@ -3,25 +3,27 @@ import belgium from "../../assets/BelgiumFlag.png";
 
 import { Link } from "react-router-dom";
 
-function FlagItem() {
+function FlagItem({ name, population, region, capital, image }) {
   return (
+    <li>
     <div className="card">
       <Link to="/Details">
-        <img className="card__img" src={belgium} alt="belgium-flag" />
+        <img className="card__img" src={image} alt={image} />
         <div className="card__text-container">
-          <h1 className="card__header">Belgium</h1>
+          <h1 className="card__header">{name}</h1>
           <p className="card__text">
-            <span className="card__text-bold">Population</span>: 81,770,900
+            <span className="card__text-bold">Population</span>: {population}
           </p>
           <p className="card__text">
-            <span className="card__text-bold">Region</span>: Americas
+            <span className="card__text-bold">Region</span>: {region}
           </p>
           <p className="card__text">
-            <span className="card__text-bold">Capital</span>: Ottawa
+            <span className="card__text-bold">Capital</span>: {capital}
           </p>
         </div>
       </Link>
     </div>
+    </li>
   );
 }
 
