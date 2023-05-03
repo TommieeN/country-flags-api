@@ -1,6 +1,11 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .card {
   background-color: $White;
   width: 80%;
