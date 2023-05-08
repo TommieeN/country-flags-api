@@ -7,6 +7,7 @@ const PORT = 9090;
 app.use(cors());
 app.use(express.json());
 app.use("/flags", flagData);
+app.use("/flags/:flagId", flagData);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 })

@@ -1,14 +1,15 @@
 import "./FlagItem.scss";
-import belgium from "../../assets/BelgiumFlag.png";
 
 import { Link } from "react-router-dom";
 
-function FlagItem({ name, population, region, capital, image }) {
+// DECONSTRUCT FLAGS FROM FLAG LIST
+function FlagItem({ name, population, region, capital, image, flagId }) {
   return (
-    <li>
-    <div className="card">
-      <Link to="/Details">
-        <img className="card__img" src={image} alt={image} />
+
+    // CREATE LINK FOR FLAG DETAILS PAGE & PASS DATA FOR FLAG LIST
+    <li className="card">
+      <Link to={`/flags/${flagId}`}>
+        <img className="card__img" src={image} alt={name} />
         <div className="card__text-container">
           <h1 className="card__header">{name}</h1>
           <p className="card__text">
@@ -22,7 +23,6 @@ function FlagItem({ name, population, region, capital, image }) {
           </p>
         </div>
       </Link>
-    </div>
     </li>
   );
 }

@@ -6,7 +6,7 @@
 }
 
 .filter {
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 0 1rem;
   &__search {
     width: 100%;
     padding: 1rem 4.5rem;
@@ -15,7 +15,7 @@
     background-position: 10%;
   }
   &__dropdown {
-    padding: 2rem 0;
+    padding-top: 2rem;
     &-toggle {
       background-color: $White;
       text-align: left;

@@ -3,14 +3,21 @@ import FlagList from "../../components/FlagList/FlagList";
 import Filter from "../../components/Filter/Filter";
 
 import { useState, useEffect } from "react";
+
 import axios from "axios";
+
+// CREATE URL FOR BACK END API
 const URL = "http://localhost:9090";
 
 function HomePage() {
-  const [flags, setFlags] = useState([]);
 
+  // CREATE STATE FOR FLAG LIST
+  const [flags, setFlags] = useState(null);
+
+  // FETCH FLAGS FROM BACK END API
   useEffect(() => {
-    axios.get(`${URL}/flags`)
+    axios
+      .get(`${URL}/flags`)
       .then((response) => {
         const flagArray = response.data;
         setFlags(flagArray);
@@ -22,11 +29,14 @@ function HomePage() {
 
   return (
     <div className="home">
+
       <Filter />
-      {flags && (<FlagList flags={flags} /> )}
-      {/* <FlagList/> */}
+
+      {/* PASS FLAGS TO FLAG LIST */}
+      {flags && <FlagList flags={flags} />} 
+
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
