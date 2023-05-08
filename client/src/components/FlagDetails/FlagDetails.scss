@@ -8,6 +8,15 @@ p {
 .details {
   padding: 2.5rem 2rem;
   background-color: $LightModeBackground;
+
+  &-link {
+    display: flex;
+    width: max-content;
+    :hover {
+      opacity: 0.8;
+      font-weight: 600;
+    }
+  }
   &-link__btn {
    @include btn-shadow;
    cursor: pointer;
@@ -24,7 +33,6 @@ p {
     }
     &__img {
         width: 100%;
-        height: 10rem; 
     }
     &__header {
         padding-bottom: 1rem;
@@ -45,8 +53,8 @@ p {
     &__btn-wrapper {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: space-between;
+        gap: 1rem;
+        justify-content: flex-start;
         padding: 1rem 0;
         :hover {
             opacity: 0.8;

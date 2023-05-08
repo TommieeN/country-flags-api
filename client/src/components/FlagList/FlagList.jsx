@@ -5,7 +5,7 @@ import FlagItem from "../FlagItem/FlagItem";
 function FlagList({ flags }) {
   return (
     <section>
-      <ul>
+      <ul className="flag-list-container">
 
         {/* MAP THROUGH FLAGS */}
         {flags
