@@ -1,10 +1,11 @@
 import "./HomePage.scss";
+
 import FlagList from "../../components/FlagList/FlagList";
 import Filter from "../../components/Filter/Filter";
 import NavBar from "../../components/NavBar/NavBar";
-import { useState, useEffect } from "react";
 
 import axios from "axios";
+import { useState, useEffect } from "react";
 
 // URL FOR BACK END API
 const URL = "http://localhost:9090";
@@ -29,13 +30,15 @@ function HomePage() {
     setSearchTerm(event.target.value);
   };
 
+  // DARK MODE USE STATE
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // DARK MODE TOGGLE
   const handleToggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
     setIsDarkMode(newDarkMode);
-    localStorage.setItem('darkMode', newDarkMode);
-  
+    localStorage.setItem("darkMode", newDarkMode);
+
     const body = document.body;
     const html = document.documentElement;
     if (newDarkMode) {
@@ -45,12 +48,13 @@ function HomePage() {
       body.classList.remove("dark");
       html.classList.remove("dark-mode");
     }
-  }
+  };
 
+  // INITIALIZE DARK MODE STATE BASED ON USERES PREFERENCE STORED IN LOCAL STORAGE
   useEffect(() => {
     const body = document.body;
-    const storedDarkMode = localStorage.getItem('darkMode');
-    if (storedDarkMode === 'true') {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    if (storedDarkMode === "true") {
       setIsDarkMode(true);
       body.classList.add("dark");
     } else {
@@ -58,8 +62,9 @@ function HomePage() {
       body.classList.remove("dark");
     }
     document.documentElement.classList.toggle(
-      "dark-mode", storedDarkMode === 'true'
-    )
+      "dark-mode",
+      storedDarkMode === "true"
+    );
   }, []);
 
   // FETCH FLAGS FROM BACK END API
@@ -77,26 +82,26 @@ function HomePage() {
 
   return (
     <>
-    <div className="home">
-    <NavBar 
-    isDarkMode={isDarkMode}
-    handleToggleDarkMode={handleToggleDarkMode}
-    />
-      <Filter
-        searchTerm={searchTerm}
-        onSearchTermChange={handleSearchTermChange}
-        onSelectRegion={handleSelectRegion}
-        isDarkMode={isDarkMode}
-      />
-      {flags && (
-        <FlagList
-          flags={flags}
+      <div className="home">
+        <NavBar
+          isDarkMode={isDarkMode}
+          handleToggleDarkMode={handleToggleDarkMode}
+        />
+        <Filter
           searchTerm={searchTerm}
-          region={selectedRegion}
+          onSearchTermChange={handleSearchTermChange}
+          onSelectRegion={handleSelectRegion}
           isDarkMode={isDarkMode}
         />
-      )}
-    </div>
+        {flags && (
+          <FlagList
+            flags={flags}
+            searchTerm={searchTerm}
+            region={selectedRegion}
+            isDarkMode={isDarkMode}
+          />
+        )}
+      </div>
     </>
   );
 }

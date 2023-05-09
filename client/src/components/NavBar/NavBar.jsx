@@ -7,8 +7,15 @@ function NavBar({ handleToggleDarkMode, isDarkMode }) {
   return (
     <div className={`nav-bar ${isDarkMode ? "dark" : ""}`}>
       <p className="nav-bar__heading">Where in the world?</p>
-      <div className={`nav-bar__wrap ${isDarkMode ? "dark" : "" }`} onClick={handleToggleDarkMode} >
-        <img className="nav-bar__moon" src={isDarkMode ? whiteMoon : Moon} alt="crescent-moon" />
+      <div
+        className={`nav-bar__wrap ${isDarkMode ? "dark" : ""}`}
+        onClick={handleToggleDarkMode}
+      >
+        <img
+          className="nav-bar__moon"
+          src={isDarkMode ? whiteMoon : Moon}
+          alt="crescent-moon"
+        />
         <p className="nav-bar__text">Dark Mode</p>
       </div>
     </div>
