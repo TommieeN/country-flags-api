@@ -2,16 +2,16 @@
 @use "../../styles/partials/mixins" as *;
 
 p {
-    font-size: 0.8rem;
-    @include tablet {
-        font-size: 1rem;
-    }
+  font-size: 0.8rem;
+  @include tablet {
+    font-size: 1rem;
+  }
 }
 
 h3 {
-    @include tablet {
-        display: none;
-    }
+  @include tablet {
+    display: none;
+  }
 }
 
 .details {
@@ -25,99 +25,99 @@ h3 {
       font-weight: 600;
     }
     @include tablet {
-        width: 100%;
-        padding: 1rem 3rem;
-        justify-content: flex-start;
+      width: 100%;
+      padding: 1rem 3rem;
+      justify-content: flex-start;
     }
   }
   &-link__btn {
     border-radius: 0.2rem;
-   @include btn-shadow;
-   cursor: pointer;
+    @include btn-shadow;
+    cursor: pointer;
     &__image {
-        width: 1rem;
-        display: flex;
-        align-items: center;
-      }
+      width: 1rem;
+      display: flex;
+      align-items: center;
+    }
   }
   &-container {
     @include tablet {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
     &__img-wrapper {
-        padding: 2rem 0;
-        @include tablet {
-            padding: 0 3rem;
-            width: 50%;
-        }
+      padding: 2rem 0;
+      @include tablet {
+        padding: 0 3rem;
+        width: 50%;
+      }
     }
     &__wrapper {
-        @include tablet {
-            width: 50%;
-            padding: 0 2rem;
-        }
+      @include tablet {
+        width: 50%;
+        padding: 0 2rem;
+      }
     }
     &__img {
-        width: 100%;
-        @include tablet {
-            height: 15rem;
-            object-fit: cover;
-        }
+      width: 100%;
+      @include tablet {
+        height: 15rem;
+        object-fit: cover;
+      }
     }
     &__header {
-        padding-bottom: 1rem;
-        @include tablet {
-            font-size: 2rem;
-        }
+      padding-bottom: 1rem;
+      @include tablet {
+        font-size: 2rem;
+      }
     }
     &__info {
-        @include tablet {
-            display: flex;
-            justify-content: space-between
-        }
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+      }
     }
     &__info-wrapper {
-        @include infoText;
-        &-bold {
-            font-weight: 600;
-        }
+      @include infoText;
+      &-bold {
+        font-weight: 600;
+      }
     }
     &__more-info {
-        @include infoText;
-        padding-bottom: 2.5rem;
-        &-bold {
-            font-weight: 600;
-        }
+      @include infoText;
+      padding-bottom: 2.5rem;
+      &-bold {
+        font-weight: 600;
+      }
     }
     &__btn-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: flex-start;
-        padding: 1rem 0;
-        :hover {
-            opacity: 0.8;
-            font-weight: bold;
-        }
-        @include tablet {
-            align-items: center;
-        }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-start;
+      padding: 1rem 0;
+      @include tablet {
+        align-items: center;
+      }
     }
     &__country-border {
-        display: none;
-        @include tablet {
-            display: flex;
-            padding: 1rem 0;
-            font-weight: 600;
-        }
+      display: none;
+      @include tablet {
+        display: flex;
+        font-weight: 600;
+      }
     }
     &__btn {
-        @include btn-shadow;
-        font-size: 0.6rem;
-        cursor: pointer;
+      @include btn-shadow;
+      font-size: 0.6rem;
+      cursor: pointer;
     }
   }
+}
+
+.details-container__btn:hover {
+  opacity: 0.8;
+  font-weight: bold;
 }
