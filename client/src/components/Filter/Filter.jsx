@@ -1,7 +1,7 @@
 import "./Filter.scss";
 import { useState } from "react";
 
-function Filter() {
+function Filter({ searchTerm, onSearchTermChange, onSelectRegion }) {
   // USESTATE FOR DROPDOWN
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -9,18 +9,28 @@ function Filter() {
   const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
 
   // FILTER REGION OPTIONS
-  const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
+  const regions = ["All Regions", "Africa", "Americas", "Asia", "Europe", "Oceania"];
 
-  // CLICK FUNCTION TO SET SELECTED REGION AND CLOSE DROPDOWN
+  // CLICK FUNCTION TO SET SELECTED REGION TO FILTER FLAGS
   const handleDropdownClick = (region) => {
     setSelectedRegion(region);
+    if (region === "All Regions") {
+      onSelectRegion(null);
+    } else {
+    onSelectRegion(region);
+    }
     setIsDropdownOpen(false);
   };
 
   // RENDER FILTER COMPONENT
   return (
     <div className="filter">
-      <input className="filter__search" placeholder="Search for a country..." />
+      <input 
+      className="filter__search" 
+      placeholder="Search for a country..." 
+      value={searchTerm}
+      onChange={onSearchTermChange}
+      />
       <div className="filter__dropdown">
         <button
           className={`filter__dropdown-toggle ${

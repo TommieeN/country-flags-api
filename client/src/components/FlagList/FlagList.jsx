@@ -2,13 +2,21 @@ import "./FlagList.scss";
 import FlagItem from "../FlagItem/FlagItem";
 
 // DECONSTRUCT FLAGS FROM HOME PAGE
-function FlagList({ flags }) {
+function FlagList({ flags, searchTerm, region }) {
+
+  const filteredFlags = flags
+  .filter((flag) => 
+  flag.name.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .filter((flag) => region === null || flag.region === region)
+  .sort((a, b) => a.region.localeCompare(b.region))
+
   return (
     <section className="flag-list">
       <ul className="flag-list__container">
 
         {/* MAP THROUGH FLAGS */}
-        {flags
+        {filteredFlags
         .map((flag) => (
           <FlagItem 
           key={flag.name} 
