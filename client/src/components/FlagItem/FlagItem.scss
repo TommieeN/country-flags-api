@@ -14,7 +14,7 @@ a {
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.001), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
   @include tablet {
     width: 23%;
-    margin: 0;
+    margin: 2rem 0;
   }
   &__img {
     width: 100%;

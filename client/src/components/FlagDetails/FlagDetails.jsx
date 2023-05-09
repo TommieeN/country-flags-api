@@ -64,24 +64,25 @@ function FlagDetails() {
         <div className="details-container__wrapper">
           <h1 className="details-container__header">{name}</h1>
           <div className="details-container__info">
+          <div className="details-container__info-wrapper">
             <p>
-              <span className="details-container__info-bold">Native Name</span>:{" "}
+              <span className="details-container__more-info-bold">Native Name</span>:{" "}
               {nativeName}
             </p>
             <p>
-              <span className="details-container__info-bold">Population</span>:{" "}
+              <span className="details-container__more-info-bold">Population</span>:{" "}
               {population}
             </p>
             <p>
-              <span className="details-container__info-bold">Region</span>:{" "}
+              <span className="details-container__more-info-bold">Region</span>:{" "}
               {region}
             </p>
             <p>
-              <span className="details-container__info-bold">Sub Region</span>:{" "}
+              <span className="details-container__more-info-bold">Sub Region</span>:{" "}
               {subregion}
             </p>
             <p>
-              <span className="details-container__info-bold">Capital</span>:{" "}
+              <span className="details-container__more-info-bold">Capital</span>:{" "}
               {capital}
             </p>
           </div>
@@ -109,9 +110,11 @@ function FlagDetails() {
                 languages.map((language) => language.name).join(", ")}{" "}
             </p>
           </div>
+          </div>
           <div className="details-container__countries">
             <h3>Border Countries:</h3>
             <div className="details-container__btn-wrapper">
+              <p className="details-container__country-border">Border Countries:</p>
               {borders &&
                 borders.map((border) => (
                   <Link key={border} to={`/flags/${border}`}>
