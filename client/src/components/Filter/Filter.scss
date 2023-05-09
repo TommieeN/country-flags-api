@@ -22,7 +22,8 @@
     background-position: 5%;
     @include tablet {
       width: 40%;
-      height: 3.5rem;
+      height: 2.5rem;
+      padding: 1rem 3.5rem;
     }
   }
   &__dropdown {
@@ -36,11 +37,11 @@
     &-toggle {
       background-color: $White;
       text-align: left;
-      padding: 1rem 2rem 1rem 1rem;
+      padding: 0.7rem;
       @include background;
       background-image: url(../../assets/icons/arrow-up.svg);
       background-position: 90%;
-      width: 67%;
+      width: 50%;
       &-down {
         cursor: pointer;
         background-image: url(../../assets/icons/arrow-down.svg);
@@ -62,8 +63,8 @@
       border-radius: 0 0 0.4rem 0.4rem;
     }
     @include tablet {
-      margin-top: 3.5rem;
-      width: 22.2%;
+      margin-top: 3rem;
+      width: 16.5%;
     }
     &-item {
       background-color: $White;
@@ -76,3 +77,9 @@
     }
   }
 }
+
+.filter__list-item:hover {
+    background-color: $LightModeBackground;
+    font-weight: 600;
+  }
+
