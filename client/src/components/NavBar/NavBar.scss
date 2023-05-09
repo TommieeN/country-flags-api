@@ -4,10 +4,11 @@
 .nav-bar {
     display: flex;
     padding: 2rem;
+    background-color: $White;
     justify-content: space-between;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
     @include tablet {
-        padding: 1rem 5rem;
+        padding: 2rem 5rem;
     }
     &__heading {
         font-size: 1rem;
@@ -17,11 +18,18 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        &.dark {
+            background: $DarkBlue;
+        }
     }
     &__moon {
         width: 1rem;
     }
     &__text {
         font-weight: 600;
+    }
+    &.dark {
+        background-color: $DarkBlue;
+        color: $White;
     }
 }

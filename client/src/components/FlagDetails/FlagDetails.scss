@@ -16,7 +16,9 @@ h3 {
 
 .details {
   padding: 2.5rem 2rem;
-  background-color: $LightModeBackground;
+  &.dark {
+    background-color: $DarkModeBackground;
+  }
   &-link {
     display: flex;
     width: max-content;
@@ -25,19 +27,23 @@ h3 {
       font-weight: 600;
     }
     @include tablet {
-      width: 100%;
-      padding: 1rem 3rem;
+      margin: 1rem 3rem;
       justify-content: flex-start;
+    }
+    &__image {
+      width: 2rem;
+      display: flex;
+      align-items: center;
     }
   }
   &-link__btn {
     border-radius: 0.2rem;
     @include btn-shadow;
     cursor: pointer;
-    &__image {
-      width: 1rem;
-      display: flex;
-      align-items: center;
+    &.dark {
+      background-color: $DarkBlue;
+      box-shadow: none;
+      color: $White;
     }
   }
   &-container {
@@ -48,9 +54,9 @@ h3 {
       align-items: center;
     }
     &__img-wrapper {
-      padding: 2rem 0;
+      margin: 2rem 0;
+      @include box-shadow;
       @include tablet {
-        padding: 0 3rem;
         width: 50%;
       }
     }
@@ -63,7 +69,7 @@ h3 {
     &__img {
       width: 100%;
       @include tablet {
-        height: 15rem;
+        height: 50vh;
         object-fit: cover;
       }
     }
@@ -112,12 +118,19 @@ h3 {
     &__btn {
       @include btn-shadow;
       font-size: 0.6rem;
+      transition: all 0.2s ease-in-out;
       cursor: pointer;
+      &.dark {
+        background-color: $DarkBlue;
+        color: $White;
+        box-shadow: none;
+      }
     }
   }
 }
 
 .details-container__btn:hover {
+  transform: scale(1.2);
   opacity: 0.8;
   font-weight: bold;
 }

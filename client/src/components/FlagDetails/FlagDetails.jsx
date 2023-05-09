@@ -1,14 +1,38 @@
 import "./FlagDetails.scss";
+import NavBar from "../NavBar/NavBar";
+
+import WhiteArrow from "../../assets/icons/white-arrow.png";
 import BackArrow from "../../assets/icons/arrowBack.svg";
 
 import axios from "axios";
+
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+
 
 // URL FOR BACK END API
 const URL = "http://localhost:9090";
 
 function FlagDetails() {
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleToggleDarkMode = () => {
+    const newDarkMode = !isDarkMode;
+    setIsDarkMode(newDarkMode);
+    localStorage.setItem('darkMode', newDarkMode);
+  
+    const body = document.body;
+    const html = document.documentElement;
+    if (newDarkMode) {
+      body.classList.add("dark");
+      html.classList.add("dark-mode");
+    } else {
+      body.classList.remove("dark");
+      html.classList.remove("dark-mode");
+    }
+  }
+  
 
   // GET FLAG ID FROM URL
   const { flagId } = useParams();
@@ -29,6 +53,21 @@ function FlagDetails() {
       });
   }, [flagId]);
 
+  useEffect(() => {
+    const body = document.body;
+    const storedDarkMode = localStorage.getItem('darkMode');
+    if (storedDarkMode === 'true') {
+      setIsDarkMode(true);
+      body.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      body.classList.remove("dark");
+    }
+    document.documentElement.classList.toggle(
+      "dark-mode", storedDarkMode === 'true'
+    )
+  }, []);
+  
   // DECONSTRUCT FLAG DETAILS
   const {
     name,
@@ -46,12 +85,14 @@ function FlagDetails() {
 
   // INSERT DATA INTO FLAG DETAILS PAGE
   return (
-    <section className="details">
+    <>
+    <NavBar handleToggleDarkMode={handleToggleDarkMode} isDarkMode={isDarkMode} />
+    <section className={`details ${isDarkMode ? "dark" : "" }`}>
       <Link className="details-link" to="/">
-        <button className="details-link__btn">
+        <button className={`details-link__btn ${isDarkMode ? "dark" : ""}`}>
           <img
             className="details-link__image"
-            src={BackArrow}
+            src={isDarkMode ? WhiteArrow : BackArrow}
             alt="back-arrow"
           />
           Back
@@ -118,7 +159,7 @@ function FlagDetails() {
               {borders &&
                 borders.map((border) => (
                   <Link key={border} to={`/flags/${border}`}>
-                    <button className="details-container__btn">{border}</button>
+                    <button className={`details-container__btn ${isDarkMode ? "dark" : "" }`}>{border}</button>
                   </Link>
                 ))}
             </div>
@@ -126,6 +167,7 @@ function FlagDetails() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

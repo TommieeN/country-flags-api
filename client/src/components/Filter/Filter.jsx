@@ -1,7 +1,7 @@
 import "./Filter.scss";
 import { useState } from "react";
 
-function Filter({ searchTerm, onSearchTermChange, onSelectRegion }) {
+function Filter({ searchTerm, onSearchTermChange, onSelectRegion, isDarkMode }) {
   // USESTATE FOR DROPDOWN
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -24,9 +24,9 @@ function Filter({ searchTerm, onSearchTermChange, onSelectRegion }) {
 
   // RENDER FILTER COMPONENT
   return (
-    <div className="filter">
+    <div className={`filter ${isDarkMode ? "dark" : "" }`}>
       <input 
-      className="filter__search" 
+      className={`filter__search ${isDarkMode ? "dark" : "" }`}
       placeholder="Search for a country..." 
       value={searchTerm}
       onChange={onSearchTermChange}
@@ -34,18 +34,18 @@ function Filter({ searchTerm, onSearchTermChange, onSelectRegion }) {
       <div className="filter__dropdown">
         <button
           className={`filter__dropdown-toggle ${
-            isDropdownOpen ? "filter__dropdown-toggle-down" : ""
-          }`}
+            isDropdownOpen && isDarkMode ? "filter__dropdown-toggle-down" : ""
+          } ${isDarkMode ? "dark" : "" }`}
           onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         >
           {selectedRegion}
         </button>
         {isDropdownOpen && (
-          <ul className="filter__list">
+          <ul className={`filter__list ${isDarkMode ? "dark" : "" }`}>
             {regions.map((region) => (
               <li
                 key={region}
-                className="filter__list-item"
+                className={`filter__list-item ${isDarkMode ? "dark" : "" }`}
                 onClick={() => handleDropdownClick(region)}
               >
                 {region}

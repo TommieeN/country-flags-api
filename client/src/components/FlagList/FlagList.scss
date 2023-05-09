@@ -3,7 +3,10 @@
 
 .flag-list{
     @include tablet {
-        margin: 1rem 3rem;
+        padding: 1rem 3rem;
+    }
+    &.dark {
+        background-color: $DarkModeBackground;
     }
     &__container {
         display: flex;

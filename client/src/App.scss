@@ -8,3 +8,10 @@
   font-family: Nunito Sans, sans-serif;
   font-size: 0.875rem;
 }
+
+body {
+  &.dark {
+    background-color: $DarkModeBackground;
+    color: $White;
+  }
+}

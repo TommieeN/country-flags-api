@@ -16,6 +16,10 @@ a {
     width: 23%;
     margin: 2rem 0;
   }
+  &.dark {
+    background-color: $DarkBlue;
+    color: $White;
+  }
   &__img {
     width: 100%;
     border-radius: 0.4rem 0.4rem 0 0;
@@ -29,9 +33,15 @@ a {
   }
   &__header {
     padding-bottom: 1rem;
+    &.dark {
+      color: $White;
+    }
   }
   &__text {
     padding-bottom: 0.2rem;
+    &.dark {
+      color: $White;
+    }
     &-bold {
       font-weight: 600;
     }

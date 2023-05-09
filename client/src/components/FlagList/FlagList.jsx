@@ -2,7 +2,7 @@ import "./FlagList.scss";
 import FlagItem from "../FlagItem/FlagItem";
 
 // DECONSTRUCT FLAGS FROM HOME PAGE
-function FlagList({ flags, searchTerm, region }) {
+function FlagList({ flags, searchTerm, region, isDarkMode }) {
 
   const filteredFlags = flags
   .filter((flag) => 
@@ -12,7 +12,7 @@ function FlagList({ flags, searchTerm, region }) {
   .sort((a, b) => a.region.localeCompare(b.region))
 
   return (
-    <section className="flag-list">
+    <section className={`flag-list ${isDarkMode ? "dark" : "" }`}>
       <ul className="flag-list__container">
 
         {/* MAP THROUGH FLAGS */}
@@ -27,6 +27,7 @@ function FlagList({ flags, searchTerm, region }) {
           region={flag.region}
           capital={flag.capital}
           flagId={flag.id}
+          isDarkMode={isDarkMode}
           />
         ))}
 
