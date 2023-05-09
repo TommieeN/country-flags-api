@@ -7,15 +7,32 @@
 
 .filter {
   padding: 0 1rem;
+  @include tablet {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__search {
     width: 100%;
     padding: 1rem 4.5rem;
     @include background;
     background-image: url(../../assets/icons/search.svg);
-    background-position: 10%;
+    background-position: 5%;
+    @include tablet {
+      width: 40%;
+      height: 3.5rem;
+    }
   }
   &__dropdown {
     padding-top: 2rem;
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      width: 37%;
+      padding-top: 0;
+    }
     &-toggle {
       background-color: $White;
       text-align: left;
@@ -23,7 +40,7 @@
       @include background;
       background-image: url(../../assets/icons/arrow-up.svg);
       background-position: 90%;
-      width: 60%;
+      width: 67%;
       &-down {
         cursor: pointer;
         background-image: url(../../assets/icons/arrow-down.svg);
@@ -43,6 +60,10 @@
     :last-child {
       padding-bottom: 0.8rem;
       border-radius: 0 0 0.4rem 0.4rem;
+    }
+    @include tablet {
+      margin-top: 3.5rem;
+      width: 19%;
     }
     &-item {
       background-color: $White;

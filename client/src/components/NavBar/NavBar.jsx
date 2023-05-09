@@ -7,7 +7,7 @@ function NavBar() {
       <p className="nav-bar__heading">Where in the world?</p>
       <div className="nav-bar__wrap">
         <img className="nav-bar__moon" src={Moon} alt="crescent-moon" />
-        <p>Dark Mode</p>
+        <p className="nav-bar__text">Dark Mode</p>
       </div>
     </div>
   );

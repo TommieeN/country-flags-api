@@ -1,8 +1,19 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.flag-list-container {
+.flag-list{
     @include tablet {
-
+        margin: 1rem 3rem;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {     
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            gap: 1rem;
+        }
     }
 }

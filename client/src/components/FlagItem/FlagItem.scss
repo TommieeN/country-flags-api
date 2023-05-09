@@ -12,9 +12,17 @@ a {
   margin: 2rem auto;
   border-radius: 0.4rem;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.001), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+  @include tablet {
+    width: 23%;
+    margin: 0;
+  }
   &__img {
     width: 100%;
     border-radius: 0.4rem 0.4rem 0 0;
+    @include tablet {
+      height: 10rem;
+      object-fit: cover;
+    }
   }
   &__text-container {
     padding: 1rem;

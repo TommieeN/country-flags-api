@@ -4,8 +4,8 @@ import FlagItem from "../FlagItem/FlagItem";
 // DECONSTRUCT FLAGS FROM HOME PAGE
 function FlagList({ flags }) {
   return (
-    <section>
-      <ul className="flag-list-container">
+    <section className="flag-list">
+      <ul className="flag-list__container">
 
         {/* MAP THROUGH FLAGS */}
         {flags

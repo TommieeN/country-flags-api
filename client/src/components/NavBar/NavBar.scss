@@ -6,6 +6,9 @@
     padding: 2rem 1rem;
     justify-content: space-between;
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.04), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+    @include tablet {
+        padding: 2rem 4rem;
+    }
     &__heading {
         font-size: 1rem;
         font-weight: 800;
@@ -17,5 +20,8 @@
     }
     &__moon {
         width: 1rem;
+    }
+    &__text {
+        font-weight: 600;
     }
 }
