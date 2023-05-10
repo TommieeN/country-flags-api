@@ -50,9 +50,8 @@ h3 {
     @include tablet {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: center;
-      gap: 5rem;
     }
     &__img-wrapper {
       margin: 2rem 0;
