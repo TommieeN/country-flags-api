@@ -13,8 +13,8 @@ a {
   border-radius: 0.4rem;
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.001), 0 6px 20px 0 rgba(0, 0, 0, 0.06);
   @include tablet {
-    width: 23%;
-    margin: 2rem 0;
+    width: 19%;
+    margin: 2rem;
   }
   &.dark {
     background-color: $DarkBlue;
@@ -29,10 +29,11 @@ a {
     }
   }
   &__text-container {
-    padding: 1rem;
+    padding: 1rem 1rem 2rem;
   }
   &__header {
     padding-bottom: 1rem;
+    font-size: 1.2rem;
     &.dark {
       color: $White;
     }

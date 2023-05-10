@@ -5,7 +5,7 @@ import Moon from "../../assets/icons/moon.svg";
 
 function NavBar({ handleToggleDarkMode, isDarkMode }) {
   return (
-    <div className={`nav-bar ${isDarkMode ? "dark" : "" }`}>
+    <nav className={`nav-bar ${isDarkMode ? "dark" : "" }`}>
       <header className="nav-bar__heading">Where in the world?</header>
       <button
         className={`nav-bar__wrap ${isDarkMode ? "dark" : ""}`}
@@ -18,7 +18,7 @@ function NavBar({ handleToggleDarkMode, isDarkMode }) {
         />
         Dark Mode
       </button>
-    </div>
+    </nav>
   );
 }
 

@@ -8,9 +8,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 // URL FOR BACK END API
-// const URL = "http://localhost:8008";
+const URL = "http://localhost:3113";
 
-const URL = "https://flags-api.onrender.com";
+// const URL = "https://flags-api.onrender.com";
 
 function HomePage() {
   // STATE FOR FLAG LIST
@@ -42,13 +42,10 @@ function HomePage() {
     localStorage.setItem("darkMode", newDarkMode);
 
     const body = document.body;
-    const html = document.documentElement;
     if (newDarkMode) {
       body.classList.add("dark");
-      html.classList.add("dark-mode");
     } else {
       body.classList.remove("dark");
-      html.classList.remove("dark-mode");
     }
   };
 
@@ -83,8 +80,7 @@ function HomePage() {
   }, []);
 
   return (
-    <>
-      <div className="home">
+      <section className="home">
         <NavBar
           isDarkMode={isDarkMode}
           handleToggleDarkMode={handleToggleDarkMode}
@@ -103,8 +99,7 @@ function HomePage() {
             isDarkMode={isDarkMode}
           />
         )}
-      </div>
-    </>
+      </section>
   );
 }
 
