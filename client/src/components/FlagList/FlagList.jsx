@@ -11,7 +11,7 @@ function FlagList({ flags, searchTerm, region, isDarkMode }) {
     .sort((a, b) => a.region.localeCompare(b.region));
 
   return (
-    <section className={`flag-list ${isDarkMode ? "dark" : ""}`}>
+    <section className={`flag-list ${isDarkMode ? "dark" : "" }`}>
       <ul className="flag-list__container">
         {/* MAP THROUGH FLAGS */}
         {filteredFlags.map((flag) => (

@@ -11,7 +11,7 @@
         padding: 2rem 5rem;
     }
     &__heading {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 800;
     }
     &__wrap {
@@ -20,6 +20,7 @@
         border: none;
         gap: 0.5rem;
         background-color: $White;
+        font-weight: 600;
         cursor: pointer;
         &.dark {
             background: $DarkBlue;
@@ -28,9 +29,6 @@
     }
     &__moon {
         width: 1rem;
-    }
-    &__text {
-        font-weight: 600;
     }
     &.dark {
         background-color: $DarkBlue;
