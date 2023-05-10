@@ -30,12 +30,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+<img width="1440" alt="Screenshot 2023-05-09 at 7 17 48 PM" src="https://github.com/TommieeN/country-flags-api/assets/123577810/c67ac626-b715-4389-83ff-aeb5175a8153">
+
+<img width="1440" alt="Screenshot 2023-05-09 at 7 17 58 PM" src="https://github.com/TommieeN/country-flags-api/assets/123577810/d0f44e65-6912-4ed3-8576-9779f8756e97">
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [URL](https://www.frontendmentor.io/solutions/fullstack-countryflags-react-app-with-dark-mode-GccqbUdgIV)
+- Live Site URL: [URL](https://client-flags.onrender.com/)
+- Please note that render automatically turns off the server after a certain amount of time, meaning after you click on the link, the server should start up within a minute or two!
 
 ### Built with
 
