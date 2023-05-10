@@ -19,6 +19,8 @@
         align-items: center;
         border: none;
         gap: 0.5rem;
+        background-color: $White;
+        cursor: pointer;
         &.dark {
             background: $DarkBlue;
             color: $White;
@@ -34,4 +36,9 @@
         background-color: $DarkBlue;
         color: $White;
     }
+}
+
+.nav-bar__wrap:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
 }
