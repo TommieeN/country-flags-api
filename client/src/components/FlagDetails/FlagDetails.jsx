@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 // URL FOR BACK END API
-const URL = "http://localhost:9090";
+const URL = "http://localhost:8008";
 
 function FlagDetails() {
   const [isDarkMode, setIsDarkMode] = useState(false);

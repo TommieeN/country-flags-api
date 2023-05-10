@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 // URL FOR BACK END API
-const URL = "http://localhost:9090";
+const URL = "http://localhost:8008";
 
 function HomePage() {
   // STATE FOR FLAG LIST
