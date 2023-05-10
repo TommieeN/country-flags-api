@@ -9,7 +9,9 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 // URL FOR BACK END API
-const URL = "http://localhost:8008";
+// const URL = "http://localhost:8008";
+
+const URL = "https://flags-api.onrender.com";
 
 function FlagDetails() {
   const [isDarkMode, setIsDarkMode] = useState(false);
