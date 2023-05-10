@@ -8,9 +8,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 // URL FOR BACK END API
-const URL = "http://localhost:3113";
-
-// const URL = "https://flags-api.onrender.com";
+const URL = "https://flags-api.onrender.com";
 
 function HomePage() {
   // STATE FOR FLAG LIST
