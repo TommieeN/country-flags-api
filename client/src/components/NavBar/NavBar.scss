@@ -17,9 +17,11 @@
     &__wrap {
         display: flex;
         align-items: center;
+        border: none;
         gap: 0.5rem;
         &.dark {
             background: $DarkBlue;
+            color: $White;
         }
     }
     &__moon {
