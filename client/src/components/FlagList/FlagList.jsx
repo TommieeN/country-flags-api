@@ -3,6 +3,7 @@ import FlagItem from "../FlagItem/FlagItem";
 
 // DECONSTRUCT FLAGS FROM HOME PAGE & FILTER SPECIFIC FLAGS
 function FlagList({ flags, searchTerm, region, isDarkMode }) {
+
   const filteredFlags = flags
     .filter((flag) =>
       flag.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -13,6 +14,7 @@ function FlagList({ flags, searchTerm, region, isDarkMode }) {
   return (
     <main className={`flag-list ${isDarkMode ? "dark" : "" }`}>
       <ul className="flag-list__container">
+
         {/* MAP THROUGH FLAGS */}
         {filteredFlags.map((flag) => (
           <FlagItem
@@ -20,13 +22,14 @@ function FlagList({ flags, searchTerm, region, isDarkMode }) {
             flags={flags}
             image={flag.image}
             name={flag.name}
-            population={flag.population}
+            population={flag.population.toLocaleString()}
             region={flag.region}
             capital={flag.capital}
             flagId={flag.id}
             isDarkMode={isDarkMode}
           />
         ))}
+        
       </ul>
     </main>
   );

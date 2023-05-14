@@ -118,7 +118,7 @@ function FlagDetails() {
                   <span className="details-container__more-info-bold">
                     Population
                   </span>
-                  : {population}
+                  : {population.toLocaleString()}
                 </p>
                 <p>
                   <span className="details-container__more-info-bold">
