@@ -42,6 +42,7 @@ function FlagDetails() {
     axios
       .get(`${URL}/flags/${flagId}`)
       .then((response) => {
+        console.log("FLAG DETAILS DATA:", response.data)
         const flagData = response.data;
         setFlag(flagData);
       })
@@ -49,7 +50,7 @@ function FlagDetails() {
         console.log(error);
       });
   }, [flagId]);
-
+ 
   // INITIALIZE DARK MODE STATE BASED ON USERES PREFERENCE STORED IN LOCAL STORAGE
   useEffect(() => {
     const body = document.body;
@@ -66,7 +67,9 @@ function FlagDetails() {
       storedDarkMode === "true"
     );
   }, []);
-
+ if (!flag) {
+  return
+ }
   // DECONSTRUCT FLAG DETAILS
   const {
     name,
